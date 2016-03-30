@@ -1,0 +1,15 @@
+body{
+    background-color:coral;
+    transition:1s;
+}
+
+p{
+    font-size:25px;
+    height:30px;
+    text-align:center;
+    
+}
+
+input{
+    margin-left:40px;
+}
