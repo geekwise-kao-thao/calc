@@ -1,61 +1,33 @@
-var h1;
-var colors = [
-    
-    'red',
-    'blue',
-    'gold',
-    'grey',
-    'lightSeaGreen',
-    'coral'
-    
-    ];
-
-var createTag = function(){
-    
-        h1 = document.createElement('h1');
-        h1.textContent = 'my h1 tag';
-        document.body.appendChild(h1);
-}
-
+var div_tag;
+var ul_tag;
+var li_tag;
 
     
-    var randomPixel = function(){
-        
-        var number = Math.round(
-            Math.random()*500
-            
-            )+1;
-        
-        return number + 'px';
-            
-    }
+    div_tag = document.createElement('div');
+    ul_tag = document.createElement('ul');
+    ul_tag.style.backgroundColor = 'blue';
+    li_tag = document.createElement('li');
     
-    var randomColor = function(){
     
-    var randomNumber = Math.round(
-        
-            Math.random() * colors.length
-        
-        ) - 1;
-    
-    return colors[randomNumber];
-    
-};
-    
+
 
 document.addEventListener('DOMContentLoaded',function(event){
     
-    createTag();
+    console.log(event);
     
-    h1.addEventListener('mouseover',function(event){
-       
-       this.style.backgroundColor = randomColor();
-       this.style.transition = '1s';
-       this.style.height = randomPixel();
-       
-            
-    });
+    document.body.appendChild(div_tag);
+    div_tag.appendChild(ul_tag);
     
+    for(var i = 0; i < 3; i++){
+        var li_tag = document.createElement('li');
+        li_tag.innerHTML = i;
+        ul_tag.appendChild(li_tag);
+        li_tag.textContent = 'time well spent';
+        
+        
+        
+    };
+    
+   
     
 });
-    
