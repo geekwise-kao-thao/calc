@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         var li_tag = document.createElement('li');
         li_tag.innerHTML = i;
         ul_tag.appendChild(li_tag);
-        li_tag.textContent = 'time well spent';
+        li_tag.textContent = 'time well wasted';
         
         
         
