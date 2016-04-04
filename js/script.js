@@ -3,15 +3,18 @@ var read_input_tag;
 var update_input_tag;
 var delete_input_tag;
 
-var create_element = function(elemnet_name){
+var create_element = function(element_name){
     
     var element = document.createElement(element_name);
+    element.style.display = 'block';
+    
+    return element;
     
 };
 
 var attach_element = function(element_child){
     
-    document.appendChild(element_child);
+    document.body.appendChild(element_child);
     
 };
 
@@ -37,28 +40,28 @@ document.addEventListener('DOMContentLoaded',function(event){
         
         if(event.keyCode === 13){
             
-            var new_element = document.createElement(this.value);
-            new_element.setAttribute('id', this.value);
-            new_element.textContent = 'this.value';
+            var new_element = document.createElement('ul');
+            new_element.setAttribute('id', create_input_tag.value);
+            new_element.textContent = create_input_tag.value;
             
             attach_element(new_element);
             
         };
         
-    };)
+    });
         
     update_input_tag.addEventListener('keydown',function(event){
         
         if(event.keyCode === 13){
             
-            var element_to_update = document.getElementById(this.value);
-            element_to_update.textContent = Date
+            var element_to_update = document.getElementById(update_input_tag.value);
+            element_to_update.style.backgroundColor = this.value;
             
         };
         
         
-    };)
+    });
     
     
-};)
+});
 
