@@ -46,6 +46,15 @@ document.addEventListener('DOMContentLoaded',function(event){
             
             attach_element(new_element);
             
+            for(var i=10; i<50; i++){
+                
+                var li_tags;
+                li_tags = document.createElement('li');
+                document.body.new_element.appendChild(li_tags);
+                li_tags = i;
+                
+            };
+            
         };
         
     });
