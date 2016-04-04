@@ -1,33 +1,64 @@
-var div_tag;
-var ul_tag;
-var li_tag;
+var create_input_tag;
+var read_input_tag;
+var update_input_tag;
+var delete_input_tag;
 
+var create_element = function(elemnet_name){
     
-    div_tag = document.createElement('div');
-    ul_tag = document.createElement('ul');
-    ul_tag.style.backgroundColor = 'blue';
-    li_tag = document.createElement('li');
+    var element = document.createElement(element_name);
     
+};
+
+var attach_element = function(element_child){
     
+    document.appendChild(element_child);
+    
+};
 
 
 document.addEventListener('DOMContentLoaded',function(event){
     
-    console.log(event);
+    create_input_tag = create_element('input');
+    read_input_tag = create_element('input');
+    update_input_tag = create_element('input');
+    delete_input_tag = create_element('input');
     
-    document.body.appendChild(div_tag);
-    div_tag.appendChild(ul_tag);
+    create_input_tag.placeholder = 'create text goes here';
+    read_input_tag.placeholder = 'read text goes here';
+    update_input_tag.placeholder = 'update text goes here';
+    delete_input_tag.placeholder = 'delete text goes here';
     
-    for(var i = 0; i < 3; i++){
-        var li_tag = document.createElement('li');
-        li_tag.innerHTML = i;
-        ul_tag.appendChild(li_tag);
-        li_tag.textContent = 'time well wasted';
+    attach_element(create_input_tag);
+    attach_element(read_input_tag);
+    attach_element(update_input_tag);
+    attach_element(delete_input_tag);
+    
+    create_input_tag.addEventListener('keydown',function(event){
+        
+        if(event.keyCode === 13){
+            
+            var new_element = document.createElement(this.value);
+            new_element.setAttribute('id', this.value);
+            new_element.textContent = 'this.value';
+            
+            attach_element(new_element);
+            
+        };
+        
+    };)
+        
+    update_input_tag.addEventListener('keydown',function(event){
+        
+        if(event.keyCode === 13){
+            
+            var element_to_update = document.getElementById(this.value);
+            element_to_update.textContent = Date
+            
+        };
         
         
-        
-    };
+    };)
     
-   
     
-});
+};)
+
