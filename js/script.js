@@ -9,17 +9,18 @@ var create_element = function(element_name){
     element.style.display = 'block';
     
     return element;
-    
 };
 
 var attach_element = function(element_child){
     
     document.body.appendChild(element_child);
-    
 };
 
 
 document.addEventListener('DOMContentLoaded',function(event){
+    
+    
+    
     
     create_input_tag = create_element('input');
     read_input_tag = create_element('input');
@@ -43,17 +44,10 @@ document.addEventListener('DOMContentLoaded',function(event){
             var new_element = document.createElement('ul');
             new_element.setAttribute('id', create_input_tag.value);
             new_element.textContent = create_input_tag.value;
+            this.value = null;
             
             attach_element(new_element);
             
-            for(var i=10; i<50; i++){
-                
-                var li_tags;
-                li_tags = document.createElement('li');
-                document.body.new_element.appendChild(li_tags);
-                li_tags = i;
-                
-            };
             
         };
         
@@ -65,12 +59,22 @@ document.addEventListener('DOMContentLoaded',function(event){
             
             var element_to_update = document.getElementById(update_input_tag.value);
             element_to_update.style.backgroundColor = this.value;
+            this.value = null;
             
+        };
+        
+    });
+    
+    delete_input_tag.addEventListener('keydown',function(event){
+        
+        if(event.keyCode === 13){
+            var element_to_delete = document.getElementById(this.value);
+            element_to_delete.parentNode.removeChild(this.li_tag);
+            this.value = null;
         };
         
         
     });
-    
     
 });
 
