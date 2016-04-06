@@ -9,7 +9,7 @@ var add_images = function(number_of_images){
     for(var i=0; i<number_of_images; i++){
     
     image = document.createElement('img');
-    image_urls.push('../images/profile_photo_' + (i+1) + '.jpg');
+    image_urls.push('images/profile_photo_' + (i+1) + '.jpg');
     image.setAttribute('src',image_urls[i]);
     
     document.body.appendChild(image);
