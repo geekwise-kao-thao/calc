@@ -1,4 +1,4 @@
-var button;
+/*var button;
 var input_box;
 
 var change_font_size = function(font_size_amount){
@@ -43,8 +43,10 @@ var create_body_element = function(element_name){
     });
     
 };
+*/
 
 
+/*
 
 document.addEventListener('DOMContentLoaded',function(event){
     
@@ -75,6 +77,74 @@ document.addEventListener('DOMContentLoaded',function(event){
         };
         
     });
+    
+    
+    
+    
+});
+
+*/
+
+
+//// below is new exercise for yearbook
+// 
+
+
+
+var photo_container;
+
+var image_urls = [
+    
+    
+//urls goes here
+//url1,
+//url2,
+//url3
+    
+    
+];
+
+
+var add_images = function(amount_of_images){
+    
+    /*var image = document.createElement('img');
+    image.setAttribute('src',image_urls[0]);
+    return image;*/
+    
+    for(var i=0; i<image_urls.length; i++){
+        
+        var image = document.createElement('img');
+    image.setAttribute('src',image_urls[0]);
+    image.style.width = 'calc(100%/' + image_urls.length')';
+    image.style.display = 'inline';
+    image.setAttribute('id','image_'+i); //this id's each image
+    
+    image.addEventListener('mouseover',function(event){
+        
+        this.style.opacity = Math.random();
+        this.style.transition = '.3';
+        if(this.style.opacity < .5){
+            this.style.opacity = '.03';
+        };
+        
+    });
+    
+    
+    document.body.appendChild(image);
+    return image;
+        
+    };
+    
+};
+
+var fresno_high = School;
+
+
+
+document.addEventListener('DOMContentLoaded',function(event){
+    
+    document.body.appendChild( add_images());
+    
     
     
     
