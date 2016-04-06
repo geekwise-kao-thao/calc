@@ -21,5 +21,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     add_images(68);
     
+    console.log(Date.now());
+    
 });
 
