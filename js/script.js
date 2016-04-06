@@ -1,8 +1,8 @@
-var photo_container;
+
  
 var image_urls = new Array;
  
-var add_images = function(number_of_images, image_width){
+var add_images = function(number_of_images){
     
     var image;
     
@@ -11,21 +11,6 @@ var add_images = function(number_of_images, image_width){
     image = document.createElement('img');
     image_urls.push('../images/profile_photo_' + (i+1) + '.jpg');
     image.setAttribute('src',image_urls[i]);
-    
-    //image.style.width = image_width;
-    image.style.transition = '.5s';
-    
-    image.addEventListener('mouseover',function(event){
-        
-        this.style.width = '50%';
-        
-    });
-    
-    image.addEventListener('mouseout',function(event) {
-        
-        this.style.width = (100/number_of_images + '%');
-        
-    })
     
     document.body.appendChild(image);
     
