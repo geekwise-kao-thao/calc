@@ -13,15 +13,21 @@ var add_images = function(number_of_images,image_width){
     image.setAttribute('src',image_urls[i]);
     image.style.width = image_width;
     
-    image.addEventListener('mouseover',function(){
+    image.addEventListener('mouseover',function(event){
         
-        this.style.width = '50%';
+        // if(event.keyCode === 1){
+            this.style.transform = 'rotatey(180deg)';
+        // };
+        
         
     });
     
-    image.addEventListener('mouseout',function(){
+    image.addEventListener('mouseout',function(event){
         
-        this.style.width = image_width;
+        // if(event.keyCode === 1){
+            this.style.transform = 'rotatey(0deg)';
+        // };
+        
         
     });
     
@@ -32,7 +38,7 @@ var add_images = function(number_of_images,image_width){
  
 document.addEventListener('DOMContentLoaded',function(event){
     
-    add_images(68, ((100/68) + '%'));
+    add_images(68, ((100/4) + '%'));
     
     console.log(Date.now());
     
