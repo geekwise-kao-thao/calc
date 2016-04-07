@@ -1,8 +1,7 @@
 
- 
 var image_urls = new Array;
  
-var add_images = function(number_of_images,image_width){
+var add_images = function(number_of_images){
     
     var image;
     
@@ -11,22 +10,31 @@ var add_images = function(number_of_images,image_width){
     image = document.createElement('img');
     image_urls.push('images/profile_photo_' + (i+1) + '.jpg');
     image.setAttribute('src',image_urls[i]);
-    image.style.width = image_width;
+    image.setAttribute('id','img_'+i);
+    image.style.transform = 'rotatey(0deg)';
+    image.style.transition = '.5s';
+    image.setAttribute('class','small');
     
-    image.addEventListener('mouseover',function(event){
+    image.addEventListener('click',function(event){
         
-        // if(event.keyCode === 1){
-            this.style.transform = 'rotatey(180deg)';
-        // };
-        
-        
-    });
-    
-    image.addEventListener('mouseout',function(event){
-        
-        // if(event.keyCode === 1){
+        if(this.style.transform === 'rotateY(180deg)'){
+            
+            this.classList.toggle[68] = 'small';
+            
             this.style.transform = 'rotatey(0deg)';
-        // };
+            image.style.transition = '.5s';
+        }else{
+            
+            this.classList.toggle[68] = 'small';
+            this.style.transform = 'rotatey(180deg)';
+            image.style.transition = '.5s';
+        };
+        
+        if(this.classList[0] === 'small'){
+            this.setAttribute('class','large');
+        }else{
+            this.setAttribute('class','small');
+        };
         
         
     });
@@ -38,7 +46,7 @@ var add_images = function(number_of_images,image_width){
  
 document.addEventListener('DOMContentLoaded',function(event){
     
-    add_images(68, ((100/4) + '%'));
+    add_images(68);
     
     console.log(Date.now());
     

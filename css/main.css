@@ -1,3 +1,18 @@
 body{
     background-color:coral;
 }
+
+.small{
+    
+    width:10%;
+    height: auto;
+}
+
+.large{
+    
+    width:50%;
+    height:auto;
+    
+}
+
+
