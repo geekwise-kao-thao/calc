@@ -3,17 +3,32 @@ var card_flip = function(){
       this.classList.toggle('off');
 }
 
-var create_images = function(){
+var main_container;
 
-  
+                main_container = document.createElement('div');
+                main_container.setAttribute('id','the_main_container');
+                main_container.style.width = '910px';
+                main_container.style.height = 'auto';
+                main_container.style.display = 'inline-block';
+
+var create_images = function(){
 
         for(var i=1;i<=68;i++){
                
-               
                 var image_container = document.createElement('section');
-                
                 image_container.setAttribute('id','img_container_'+i);
-                document.body.appendChild(image_container);
+                image_container.style.transform = 'rotateY(0deg)';
+                image_container.style.transition = '1s';
+                
+                image_container.addEventListener('click',function(event) {
+                    if(this.style.transform === 'rotateY(180deg)'){
+                        this.style.transform = 'rotateY(0deg)';
+                        this.style.transition = '1s';
+                    }else{
+                        this.style.transform = 'rotateY(180deg)';
+                        this.style.transition = '1s';
+                    };
+                })
                 
                 var image = document.createElement('img');
                 image.setAttribute('src','images/profile_photo_'+i+'.jpg');
@@ -40,7 +55,6 @@ var create_images = function(){
                 image_container.appendChild(image);
                 
                 var image_info = document.createElement('span');
-                
                 image_info.setAttribute('id','img_info_container_'+i);
                 image_info.classList.add('off');
                 
@@ -67,15 +81,26 @@ var create_images = function(){
                 
                 image_info_github_link.setAttribute('id','img_info_github_link_'+i);
                 image_info_github_link.setAttribute('href','http://www.github.com/geekwise');
-                image_info_github_link.textContent = 'github link '+i;
+                
+                var twitter_icon = document.createElement('i');
+                twitter_icon.setAttribute('id','twitter_'+i);
+                twitter_icon.setAttribute('class','fa fa-twitter');
                 
                 image_info_twitter_link.setAttribute('id','img_info_twitter_link_'+i);
                 image_info_twitter_link.setAttribute('href','http://www.twitter.com/climateamante');
-                image_info_twitter_link.textContent = 'twitter link'+i;
                 
+                var github_icon = document.createElement('i');
+                github_icon.setAttribute('id','github_'+i);
+                github_icon.setAttribute('class','fa fa-link');
+                
+                document.body.appendChild(main_container);
+                main_container.appendChild(image_container);
                 image_container.appendChild(image_info);
                 image_info.appendChild(image_info_github_link);
                 image_info.appendChild(image_info_twitter_link);
+                image_info_twitter_link.appendChild(twitter_icon);
+                image_info_github_link.appendChild(github_icon);
+
                 
         };
         

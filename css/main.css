@@ -1,8 +1,19 @@
-
 body{
     background-color:coral;
     width:100%;
+    display: block;
     margin:0 auto;
+    text-align:center;
+}
+
+a{
+    text-decoration:none;
+}
+
+#the_main_container{
+    
+    background-color:coral;
+    
 }
 
 
@@ -11,25 +22,31 @@ section[id^=img_container_]{
     margin:0;
     padding:0;
     float:left;
-    display:block;
+    display:inline-block;
+    width:425px;
+    height:425px;
+    border:15px solid white;
 }
 
 span[id^=img_info_container_]{
     transition:1s;
     background-color:lightSeaGreen;
-    transform:rotateY(0deg);
+    height:100%;
+    width:100%;
+    font-size:2.5rem;
 }
 
 .off{
     transition:1s;
-    opacity:0;
+    /*opacity:0;*/
+    display:none;
     transform:rotateY(0deg);
 }
 
 .on{
     transition:1s;
-    opacity:1;
-    display:inline-block;
-    transform:rotateY(0deg);
+    /*opacity:1;*/
+    display: inline-block;
+    transform:rotateY(180deg);
 }
 
