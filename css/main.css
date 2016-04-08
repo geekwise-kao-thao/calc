@@ -1,18 +1,35 @@
+
 body{
     background-color:coral;
+    width:100%;
+    margin:0 auto;
 }
 
-.small{
-    
-    width:10%;
-    height: auto;
+
+
+section[id^=img_container_]{
+    margin:0;
+    padding:0;
+    float:left;
+    display:block;
 }
 
-.large{
-    
-    width:50%;
-    height:auto;
-    
+span[id^=img_info_container_]{
+    transition:1s;
+    background-color:lightSeaGreen;
+    transform:rotateY(0deg);
 }
 
+.off{
+    transition:1s;
+    opacity:0;
+    transform:rotateY(0deg);
+}
+
+.on{
+    transition:1s;
+    opacity:1;
+    display:inline-block;
+    transform:rotateY(0deg);
+}
 
