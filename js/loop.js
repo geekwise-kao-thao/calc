@@ -7,9 +7,13 @@ var main_container;
 
                 main_container = document.createElement('div');
                 main_container.setAttribute('id','the_main_container');
-                main_container.style.width = '910px';
-                main_container.style.height = 'auto';
                 main_container.style.display = 'inline-block';
+                
+var main_container_div;
+    
+                main_container_div = document.createElement('div');
+                main_container_div.setAttribute('id','the_main_container_div');
+                main_container_div.style.display = 'inline-block'; 
 
 var create_images = function(){
 
@@ -94,7 +98,8 @@ var create_images = function(){
                 github_icon.setAttribute('class','fa fa-link');
                 
                 document.body.appendChild(main_container);
-                main_container.appendChild(image_container);
+                main_container.appendChild(main_container_div);
+                main_container_div.appendChild(image_container);
                 image_container.appendChild(image_info);
                 image_info.appendChild(image_info_github_link);
                 image_info.appendChild(image_info_twitter_link);
