@@ -1,9 +1,31 @@
+/* Mentors | c9-javascript-example */
+
+/*  Table of Contents 
+
+1.0  Global Selectors
+2.0  ID's
+3.0  Off & On Class for Flip Card Effect
+
+
+
+*/
+
+/* 
+1.0  Global Selectors 
+*/
+
 body{
     background-color:#E6E6E6;
     width:100%;
     display: block;
     margin:0 auto;
     text-align:center;
+    font-family: "Open Sans", san-serif;
+    font-size:65.2%;
+}
+
+p{
+    margin:0;
 }
 
 a{
@@ -13,7 +35,7 @@ a{
     height:auto;
     background-color:#ffffff;
     position:relative;
-    top:7rem;
+    top:4rem;
     color:#9B9B9B;
 }
 
@@ -23,6 +45,17 @@ i:hover{
 
 img{
     width: 100%;
+}
+
+/* 
+1.0  ID's 
+*/
+
+#image_title{
+    font-weight:300;
+    color:#4d4d4d;
+    margin:3.5rem 0 3.5rem 0;
+    font-size:2.1rem;
 }
 
 #the_main_container{
@@ -44,7 +77,17 @@ img{
     
 }
 
+p[id^=name_]{
+    font-size:1rem;
+    position:relative;
+    top:2rem;
+}
 
+p[id^=title_]{
+    font-size:.6rem;
+    position:relative;
+    top:2rem;
+}
 
 section[id^=img_container_]{
     margin:0;
@@ -63,6 +106,10 @@ span[id^=img_info_container_]{
     height:137px;
     font-size:1rem;
 }
+
+/* 
+3.0  Off & On Class for Flip Card Effect 
+*/
 
 .off{
     transition:1s;

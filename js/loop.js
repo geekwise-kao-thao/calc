@@ -4,13 +4,17 @@ var card_flip = function(){
 }
 
 var main_container;
+var main_container_h1_tag;
+var main_container_div;
 
                 main_container = document.createElement('div');
                 main_container.setAttribute('id','the_main_container');
                 main_container.style.display = 'inline-block';
                 
-var main_container_div;
-    
+                main_container_h1_tag = document.createElement('h1');
+                main_container_h1_tag.setAttribute('id','image_title');
+                main_container_h1_tag.textContent = 'Meet our mentor community.';
+                
                 main_container_div = document.createElement('div');
                 main_container_div.setAttribute('id','the_main_container_div');
                 main_container_div.style.display = 'inline-block'; 
@@ -80,6 +84,14 @@ var create_images = function(){
                         
                 });
                 
+                var image_info_name = document.createElement('p');
+                image_info_name.setAttribute('id','name_'+i);
+                image_info_name.textContent = 'Name_'+i;
+                
+                var image_info_title = document.createElement('p');
+                image_info_title.setAttribute('id','title_'+i);
+                image_info_title.textContent = 'Web Developer_'+i;
+                
                 var image_info_github_link = document.createElement('a');
                 var image_info_twitter_link = document.createElement('a');
                 
@@ -98,9 +110,12 @@ var create_images = function(){
                 github_icon.setAttribute('class','fa fa-link');
                 
                 document.body.appendChild(main_container);
+                main_container.appendChild(main_container_h1_tag);
                 main_container.appendChild(main_container_div);
                 main_container_div.appendChild(image_container);
                 image_container.appendChild(image_info);
+                image_info.appendChild(image_info_name);
+                image_info.appendChild(image_info_title);
                 image_info.appendChild(image_info_github_link);
                 image_info.appendChild(image_info_twitter_link);
                 image_info_twitter_link.appendChild(twitter_icon);
