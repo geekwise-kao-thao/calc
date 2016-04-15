@@ -5,15 +5,24 @@ html, body{
 }
 
 body{
+<<<<<<< HEAD
     text-align: center;
     background-color:pink;
 }
 
 #display_box{
+=======
+    background-color:coral;
+    text-align: center;
+}
+
+input{
+>>>>>>> 0c02af17cf00a4cddcc35244296d24104ac4b860
     width:80%;
     height:4rem;
     margin:2rem;
     border-radius: 5px;
+<<<<<<< HEAD
     background-color:white;
     font-size:2rem;
     display:inline-block;
@@ -50,13 +59,21 @@ body{
 }*/
 
 /*
+=======
+}
+
+>>>>>>> 0c02af17cf00a4cddcc35244296d24104ac4b860
 section{
     width:30rem;
     background-color:#CCD4D7;
     height:40rem;
     display:inline-block;
     border-radius: 20px;
+<<<<<<< HEAD
     box-shadow: 5px 5px 5px grey;
+=======
+    box-shadow: 1px 1px 1px sgrey;
+>>>>>>> 0c02af17cf00a4cddcc35244296d24104ac4b860
 }
 
 img{
@@ -66,8 +83,18 @@ img{
     margin:.5rem;
 }
 
+<<<<<<< HEAD
 
 
+=======
+button{
+    background-color:azure;
+    width:5rem;
+    font-size:2rem;
+    color:firebrick;
+    margin:.5rem;
+}
+>>>>>>> 0c02af17cf00a4cddcc35244296d24104ac4b860
 
 
 #numbers{
@@ -84,4 +111,8 @@ img{
 
 #image_and_button button{
     width:80%;
+<<<<<<< HEAD
 }*/
+=======
+}
+>>>>>>> 0c02af17cf00a4cddcc35244296d24104ac4b860
