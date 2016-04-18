@@ -8,28 +8,45 @@ body{
 
     text-align: center;
     background-color:pink;
+    margin:0 auto;
 }
 
 input{
 
     width:80%;
-    height:4rem;
+    height:6rem;
     margin:2rem;
     border-radius: 5px;
-
     background-color:white;
-    font-size:2rem;
+    font-size:3.5rem;
     display:inline-block;
 }
 
 button{
     background-color:yellow;
-    width:60px;
-    height:60px;
-    font-size:3rem;
+    width:70px;
+    height:70px;
+    font-size:3.5rem;
     color:purple;
     display:inline-block;
     margin:2px;
+    border-radius: 5px;
 }
 
+#numbers_container{
+    width:50%;
+    height:40rem;
+    display: inline-block;
+    background-color:grey;
+    float:left;
+    margin-left:70px;
+}
+
+#operators_container{
+    width:20%;
+    height:40rem;
+    display: inline-block;
+    background-color:gold;
+    float:left;
+}
 
