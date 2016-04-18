@@ -1,121 +1,92 @@
-var section_tag;
-var display_box;
-var number_buttons_div;
-var plus_minus_div;
-var plus_button;
-var minus_button;
-var equal_button;
+var calc_buttons;
+var answer_container;
+var calc_body;
 
+calc_buttons = [
+    
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    0,
+    '+',
+    '-',
+    '*',
+    '/'
+    
+];
 
-    section_tag = document.createElement('section')
-    section_tag.style.backgroundColor = 'grey';
-    section_tag.style.width = '300px';
-    section_tag.style.height = '400px';
-    section_tag.style.borderRadius = '5px';
-    section_tag.style.display = 'inline-block';
-    section_tag.style.marginTop = '5rem';
-    
-    display_box = document.createElement('div');
-    display_box.setAttribute('id','display_box');
-    
-    number_buttons_div = document.createElement('div');
-    number_buttons_div.setAttribute('id','numbers_div');
-    
-    plus_minus_div = document.createElement('div');
-    plus_minus_div.setAttribute('id', 'plus_and_minus_div');
-    
-    plus_button = document.createElement('button');
-    plus_button = document.createElement('button');
-    plus_button.style.width = '90%';
-    plus_button.style.height = '40%';
-    plus_button.textContent = '+';
-    plus_button.style.fontSize = '2.5rem';
-    plus_button.style.borderRadius = '5px';
-    
-    minus_button = document.createElement('button');
-    minus_button = document.createElement('button');
-    minus_button.style.width = '90%';
-    minus_button.style.height = '40%';
-    minus_button.textContent = '-';
-    minus_button.style.fontSize = '2.5rem';
-    minus_button.style.borderRadius = '5px';
-    
-    equal_button = document.createElement('button');
-    equal_button = document.createElement('button');
-    equal_button.style.width = '80%';
-    equal_button.style.height = '50px';
-    equal_button.textContent = '=';
-    equal_button.style.fontSize = '2.5rem';
-    equal_button.style.borderRadius = '5px';
-    
-    plus_button.addEventListener('click',function(event){
-                
-                var plus_sign = document.createElement('span');
-                plus_sign.textContent = '+';
-                display_box.appendChild(plus_sign);
-                
-    });
-    
-    minus_button.addEventListener('click',function(event){
-                
-                var minus_sign = document.createElement('span');
-                minus_sign.textContent = '-';
-                display_box.appendChild(minus_sign);
-                
-    });
-    
-    // equal_button.addEventListener('click',function(event){
-                
-    //             var equal_sign = document.createElement('span');
-    //             equal_sign.textContent = '=';
-    //             display_box.appendChild(equal_sign);
-                
-    // });
+calc_body = document.createElement('div');
+calc_body.style.backgroundColor = 'coral';
+calc_body.style.width = '500px';
+calc_body.style.height = '600px';
+calc_body.style.borderRadius = '10px';
 
-    var create_number_buttons = function(amount_of_number_buttons){
-        
-        var number_buttons;
-        
-        for(var i=1; i<=amount_of_number_buttons; i++){
-            number_buttons = document.createElement('button');
-            number_buttons.setAttribute('id','number_'+i)
-            number_buttons.textContent = i;
-            number_buttons.style.width = '45%';
-            number_buttons.style.height = '40%';
-            number_buttons.style.fontSize = '2.5rem';
-            number_buttons.style.borderRadius = '5px';
-            
-            number_buttons.addEventListener('click',function(event){
-                
-                var numbers = document.createElement('span');
-                numbers.textContent = this.innerHTML;
-                display_box.appendChild(numbers);
-                
-            });
-            
-            number_buttons_div.appendChild(number_buttons);
-        };
-        
-        equal_button.addEventListener('click',function(event){
-                
-                var equal_sign = document.createElement('span');
-                equal_sign.textContent = '=';
-                display_box.appendChild(equal_sign);
-                
-    });
-        
-    };
+var create_element = function(element_type, element_id){
     
+    var element = document.createElement(element_type);
+    element.setAttribute('id',element_id);
+    
+    calc_body.appendChild(element);
+    
+};
+
 document.addEventListener('DOMContentLoaded',function(event){
     
-    document.body.appendChild(section_tag);
-    section_tag.appendChild(display_box);
-    section_tag.appendChild(number_buttons_div);
-    section_tag.appendChild(plus_minus_div);
-    section_tag.appendChild(equal_button);
-    plus_minus_div.appendChild(plus_button);
-    plus_minus_div.appendChild(minus_button);
+    document.body.appendChild(calc_body);
     
-    create_number_buttons(4);
+    create_element('input','answer_container');
+    answer_container = document.getElementById('answer_container');
+    
+    for(var i=0; i<calc_buttons.length; i++){
+        
+        create_element('button','calc_button_'+i);
+        
+        var current_element = document.getElementById('calc_button_'+i);
+        
+        
+        current_element.addEventListener('click',function(event){
+            
+            answer_container.value =  answer_container.value += this.textContent;
+            
+        });
+        
+        current_element.textContent = calc_buttons[i];
+        current_element.style.backgroundColor = 'yellow';
+        current_element.style.width = '60px';
+        current_element.style.height = '60px';
+        current_element.style.fontSize = '3rem';
+        current_element.style.color = 'purple';
+        current_element.style.display ='inline-block';
+        current_element.style.margin = '2px';
+        
+    };
+   
+    create_element('button','equal_button');
+    create_element('button','clear_data_button');
+    
+    var equal_button = document.getElementById('equal_button');
+    var clear_data_button = document.getElementById('clear_data_button');
+    
+    equal_button.textContent = '=';
+    clear_data_button.textContent = 'AC';
+    
+    equal_button.addEventListener('click',function(event){
+        
+        answer_container.value = eval(answer_container.value);
+        
+    });
+    
+    clear_data_button.addEventListener('click',function(event){
+        
+        answer_container.value = '';
+        
+    });
     
 });
+
