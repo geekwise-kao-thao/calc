@@ -20,33 +20,69 @@ input{
     background-color:white;
     font-size:3.5rem;
     display:inline-block;
+    margin:4rem 0 1rem 0;
+    text-align:right;
 }
 
 button{
-    background-color:yellow;
+    background-color:white;
     width:70px;
     height:70px;
     font-size:3.5rem;
-    color:purple;
+    color:black;
     display:inline-block;
     margin:2px;
-    border-radius: 5px;
+    border-radius: 35px;
+    border:1px solid grey;
+    opacity:.8;
+}
+
+button:hover{
+    opacity:1;
 }
 
 #numbers_container{
-    width:50%;
-    height:40rem;
+    width:60%;
+    height:30rem;
     display: inline-block;
-    background-color:grey;
+    background-color:#ECEAEA;
     float:left;
-    margin-left:70px;
+    margin-left:36px;
 }
 
 #operators_container{
-    width:20%;
-    height:40rem;
+    width:22%;
+    height:30rem;
     display: inline-block;
-    background-color:gold;
+    background-color:#ECEAEA;
     float:left;
 }
+
+#answer_container{
+    padding:0 1rem 0 1rem;
+}
+
+#calc_image{
+    width:70%;
+    height:10%;
+}
+
+#equal_button:hover{
+    background-color:#292627;
+}
+
+button[id^=calc_number_button_]:hover{
+    background-color: lightgrey;
+}
+
+button[id^=calc_operator_button_]{
+    background-color:lightgrey;
+}
+
+button[id^=calc_operator_button_]:hover{
+    background-color:grey;
+}
+
+
+
 
