@@ -7,6 +7,7 @@ var top_container_buttons;
 var numbers_container;
 var operators_container;
 var input_element;
+var delete_button;
 
 top_container_buttons = [
     
@@ -152,11 +153,10 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     var equal_button = document.getElementById('equal_button');
     var clear_data_button = document.getElementById('top_button_0');
+    delete_button = document.getElementById('top_button_3');
     
     equal_button.textContent = '=';
     equal_button.style.backgroundColor = '#56503A';
-    clear_data_button.textContent = 'AC';
-    clear_data_button.style.backgroundColor = '#F54803';
     
     calc_body.appendChild(numbers_container);
     calc_body.appendChild(operators_container);
@@ -170,6 +170,21 @@ document.addEventListener('DOMContentLoaded',function(event){
     clear_data_button.addEventListener('click',function(event){
         
         answer_container.value = '';
+        
+    });
+    
+    delete_button.addEventListener('click',function(event){
+        
+        var current_value = answer_container.value.split('');
+        
+        var new_value = new String;
+        
+        for(var i=0; i<answer_container.value.length - 2; i++){
+            new_value += current_value[i];
+            
+        }; 
+        
+        answer_container.value = new_value;
         
     });
     

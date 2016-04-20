@@ -39,10 +39,16 @@ button{
 
 #top_button_1{
     margin:0 15px 0 3px;
+    background-color:#CCC3AC;
 }
 
 #top_button_2{
     margin:0 17px 0 -10px;
+    background-color:#CCC3AC;
+}
+
+#top_button_3{
+    background-color:orangered;
 }
 
 #top_button_0{
@@ -58,6 +64,10 @@ button{
     background-color:white;
     float:left;
     margin-left:36px;
+}
+
+#calc_number_button_11{
+    background-color:#CCC3AC;
 }
 
 #operators_container{
@@ -86,17 +96,10 @@ button{
     border:none;
 }
 
-button[id^=calc_number_button_]:hover{
-    background-color: lightgrey;
-}
-
 button[id^=calc_operator_button_]{
     background-color:#CCC3AC;
 }
 
-button[id^=calc_operator_button_]:hover{
-    background-color:grey;
-}
 
 
 
