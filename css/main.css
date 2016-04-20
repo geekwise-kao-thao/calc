@@ -37,6 +37,10 @@ button{
     opacity:.8;
 }
 
+#top_container > button{
+    margin: 0 10px 0 10px;
+}
+/*
 #top_button_1{
     margin:0 15px 0 3px;
     background-color:#CCC3AC;
@@ -50,6 +54,7 @@ button{
 #top_button_3{
     background-color:orangered;
 }
+*/
 
 #top_button_0{
     background-color:#F54803;
@@ -57,13 +62,21 @@ button{
     border:none;
 }
 
+#delete_button{
+    position: relative;
+    top:23px;
+}
+
 #numbers_container{
-    width:60%;
+    width:76%;
     height:30rem;
     display: inline-block;
     background-color:white;
     float:left;
-    margin-left:36px;
+}
+
+#numbers_container button{
+    margin:7px 8px 0 13px;
 }
 
 #calc_number_button_11{
@@ -71,11 +84,18 @@ button{
 }
 
 #operators_container{
-    width:22%;
+    width:20%;
     height:30rem;
     display: inline-block;
     background-color:white;
     float:left;
+    padding-top:2px;
+}
+
+#operators_container button{
+    margin-top:5px;
+    position:relative;
+    right:8px;
 }
 
 #answer_container{

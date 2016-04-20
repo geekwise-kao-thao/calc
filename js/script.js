@@ -13,8 +13,7 @@ top_container_buttons = [
     
     'AC',
     '%',
-    '/',
-    'B'
+    '/'
     
 ];
 
@@ -46,7 +45,7 @@ calc_operator_buttons = [
 calc_body = document.createElement('div');
 calc_body.style.backgroundColor = 'white';
 calc_body.style.width = '400px';
-calc_body.style.height = '550px';
+calc_body.style.height = '565px';
 calc_body.style.borderRadius = '10px';
 calc_body.style.display = 'inline-block';
 calc_body.style.boxShadow = '2px 2px 2px grey';
@@ -62,6 +61,9 @@ numbers_container.setAttribute('id','numbers_container');
 
 operators_container = document.createElement('div');
 operators_container.setAttribute('id','operators_container');
+
+delete_button = document.createElement('button');
+delete_button.setAttribute('id','delete_button');
 
 var create_top_buttons_element = function(top_button_element_type,top_button_element_id){
     
@@ -115,6 +117,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         
     };
     
+    top_container.appendChild(delete_button);
     
     for(var i=0; i<calc_number_buttons.length; i++){
         
@@ -153,7 +156,6 @@ document.addEventListener('DOMContentLoaded',function(event){
     
     var equal_button = document.getElementById('equal_button');
     var clear_data_button = document.getElementById('top_button_0');
-    delete_button = document.getElementById('top_button_3');
     
     equal_button.textContent = '=';
     equal_button.style.backgroundColor = '#56503A';
@@ -179,7 +181,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         
         var new_value = new String;
         
-        for(var i=0; i<answer_container.value.length - 2; i++){
+        for(var i=0; i<answer_container.value.length - 1; i++){
             new_value += current_value[i];
             
         }; 
