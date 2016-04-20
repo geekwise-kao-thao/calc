@@ -28,7 +28,9 @@ calc_number_buttons = [
     1,
     2,
     3,
-    0
+    0,
+    '.',
+    '()'
     
 ];
 
@@ -43,7 +45,7 @@ calc_operator_buttons = [
 calc_body = document.createElement('div');
 calc_body.style.backgroundColor = 'white';
 calc_body.style.width = '400px';
-calc_body.style.height = '500px';
+calc_body.style.height = '550px';
 calc_body.style.borderRadius = '10px';
 calc_body.style.display = 'inline-block';
 calc_body.style.boxShadow = '2px 2px 2px grey';
@@ -98,12 +100,17 @@ document.addEventListener('DOMContentLoaded',function(event){
     answer_container = document.getElementById('answer_container');
     
     for(var i=0; i<top_container_buttons.length; i++){
-        
+        console.log(top_container_buttons);
         create_top_buttons_element('button','top_button_'+i);
         
-        var current_top_divide_button_element = document.getElementById('top_button_'[2]);
+        var current_top_button_element = document.getElementById('top_button_'+i);
         
+        current_top_button_element.addEventListener('click',function(event){
             answer_container.value = answer_container.value += this.textContent;
+        });
+        
+        current_top_button_element.textContent = top_container_buttons[i];
+        
         
     };
     
@@ -115,9 +122,7 @@ document.addEventListener('DOMContentLoaded',function(event){
         var current_number_element = document.getElementById('calc_number_button_'+i);
         
         current_number_element.addEventListener('click',function(event){
-            
             answer_container.value =  answer_container.value += this.textContent;
-            
         });
         
         current_number_element.textContent = calc_number_buttons[i];
@@ -143,10 +148,10 @@ document.addEventListener('DOMContentLoaded',function(event){
     };
    
     create_operators_element('button','equal_button');
-    create_top_buttons_element('button','clear_data_button');
+    //create_top_buttons_element('button','clear_data_button');
     
     var equal_button = document.getElementById('equal_button');
-    var clear_data_button = document.getElementById('clear_data_button');
+    var clear_data_button = document.getElementById('top_button_0');
     
     equal_button.textContent = '=';
     equal_button.style.backgroundColor = '#56503A';

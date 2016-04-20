@@ -18,7 +18,7 @@ input{
     background-color:white;
     font-size:3.5rem;
     display:inline-block;
-    margin:1rem 0 3rem 0;
+    margin:1rem 0 8rem 0;
     text-align:right;
     font-family: 'Roboto', sans-serif;
 }
@@ -35,6 +35,20 @@ button{
     border:1px solid #56503A;
     font-family: 'Yantramanav', sans-serif;
     opacity:.8;
+}
+
+#top_button_1{
+    margin:0 15px 0 3px;
+}
+
+#top_button_2{
+    margin:0 17px 0 -10px;
+}
+
+#top_button_0{
+    background-color:#F54803;
+    color:white;
+    border:none;
 }
 
 #numbers_container{
