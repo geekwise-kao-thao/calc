@@ -8,6 +8,7 @@ var numbers_container;
 var operators_container;
 var input_element;
 var delete_button;
+var image_tag;
 
 top_container_buttons = [
     
@@ -65,6 +66,13 @@ operators_container.setAttribute('id','operators_container');
 delete_button = document.createElement('button');
 delete_button.setAttribute('id','delete_button');
 
+image_tag = document.createElement('img');
+image_tag.setAttribute('src','http://i.imgur.com/OXXgOoZ.jpg');
+image_tag.setAttribute('id','delete_image');
+
+
+//<i class="fa fa-chevron-left" aria-hidden="true"></i>
+
 var create_top_buttons_element = function(top_button_element_type,top_button_element_id){
     
     var top_button_element = document.createElement(top_button_element_type);
@@ -118,6 +126,7 @@ document.addEventListener('DOMContentLoaded',function(event){
     };
     
     top_container.appendChild(delete_button);
+    delete_button.appendChild(image_tag);
     
     for(var i=0; i<calc_number_buttons.length; i++){
         

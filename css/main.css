@@ -64,7 +64,16 @@ button{
 
 #delete_button{
     position: relative;
-    top:23px;
+    top:3px;
+    overflow:hidden;
+    border:1px solid #E63347;
+}
+
+#delete_image{
+    width:66%; 
+    position: relative;
+    top:5px;
+    right:2px;
 }
 
 #numbers_container{
